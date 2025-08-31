@@ -1,6 +1,5 @@
 package org.example.service;
 
-import lombok.RequiredArgsConstructor;
 import org.example.api.PetsApiClient;
 import org.example.model.Pet;
 import org.springframework.http.ResponseEntity;

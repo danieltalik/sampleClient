@@ -4,7 +4,6 @@ package org.example.config;
 import feign.FeignException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
-import org.springdoc.api.OpenApiResourceNotFoundException;
 
 import java.io.IOException;
 

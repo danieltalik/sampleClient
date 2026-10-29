@@ -18,9 +18,7 @@ public class PetApiConfig {
 
     @Bean
     public RequestInterceptor requestInterceptor() {
-        return requestTemplate -> {
-            log.info("Calling Pets API {}", requestTemplate.url());
-        };
+        return requestTemplate -> log.info("Calling Pets API {}", requestTemplate.url());
     }
     @Bean
     public OpenAPI customOpenApi(){
@@ -38,7 +36,7 @@ public class PetApiConfig {
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/v3/api-docs/**").permitAll()
                         .requestMatchers("/pets/**").permitAll()
-                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/actuator/health/**").permitAll()
                         .anyRequest().authenticated()).build();
     }
 }

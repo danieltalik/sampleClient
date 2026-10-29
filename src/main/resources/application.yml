@@ -1,13 +1,21 @@
 spring:
+  application:
+    name: sampleClient
   cloud:
     openfeign:
       client:
         config:
           pets:
-            connectTimeout: 5000 # Connection timeout in milliseconds
-            readTimeout: 10000   # Read timeout in milliseconds
-            loggerLevel: full
-            errorDecoder: org.example.config.PetErrorDecoder
+            connect-timeout: 5000 # milliseconds
+            read-timeout: 10000   # milliseconds
+            logger-level: full
+            error-decoder: org.example.config.PetErrorDecoder
+
 pets:
   name: pets
-  url: localhost:8085
+  url: ${PETS_URL:http://localhost:8085}
+
+# Feign only prints request/response logs when the client's logger is at DEBUG.
+logging:
+  level:
+    org.example.api: DEBUG

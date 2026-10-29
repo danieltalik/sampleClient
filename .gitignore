@@ -15,7 +15,7 @@ target/
 
 misc.xml
 encodings.xml
-=p=vcs.xml
+vcs.xml
 
 ### Eclipse ###
 .apt_generated
